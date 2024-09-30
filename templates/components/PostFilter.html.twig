@@ -1,0 +1,19 @@
+<div{{attributes}}>
+	<div class="max-w-screen-sm mx-auto my-5">
+		<input type="text" data-model="query" placeholder="Search for a post..." class="w-full text-center border-2 rounded-md text-slate-500 border-slate-400">
+	</div>
+	{% set posts = this.posts %}
+
+	{% if posts | length == 0 %}
+		<h1 class='text-3xl font-bold text-center'>
+			Pas de Resultat
+		</h1>
+	{% endif %}
+	<div class='grid grid-cols-3 gap-4 m-10'>
+		{% for item in posts %}
+			<a href=" {{path('app_post_show', {slug: item.slug})}}" class='p-4 rounded-md bg-slate-100 hover:bg-slate-300 border-l-4 border{{ item.category.color}} '>
+				{{item.title}}
+			</a>
+		{% endfor %}
+	</div>
+</div>
