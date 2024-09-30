@@ -13,7 +13,7 @@
   button {
     @apply px-4 py-2 border-2 rounded-md bg-slate-50 hover:bg-slate-300 border-slate-400;
   }
-  input[type="checkbox"] {
+  input[type="checkbox"], input[type="color"]{
     @apply ml-2 w-fit;
   }
 }

@@ -17,10 +17,10 @@ class CategoryType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('image', FileType::class,[
-                'mapped'=>false,
-                'constraints'=>[
-                    new File(['mimeTypes'=>['image/jpg', 'image/jpeg','image/gif'], ])
+            ->add('image', FileType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new File(['mimeTypes' => ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'],])
                 ]
             ])
             ->add('color', ColorType::class)
