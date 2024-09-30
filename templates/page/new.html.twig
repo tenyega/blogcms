@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Homepage
+{% block title %}New Post
 {% endblock %}
 
 {% block stylesheets %}
@@ -24,8 +24,13 @@
 {% endblock %}
 
 {% block body %}
-	{{ dump(router) }}
-	<div class="p-4 border-2 rounded-lg border-slate-400">
-		<twig:PostFilter/>
-	</div>
-{% endblock %}
+	<div class="flex flex-col gap-4 p-4 m-10 border-2 rounded-lg border-slate-400">
+		<h1 class="text-3xl font-bold">
+			Add New Post
+		</h1>
+		<div class="p-4 my-4 rounded-md bg-slate-50">
+			{{ form(postForm) }}
+			</div>
+		</div>
+
+	{% endblock %}
